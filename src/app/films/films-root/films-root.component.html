@@ -1,0 +1,92 @@
+<div class="chenar">
+  <h3>CAUTATI filme; cautarea se poate face dupa ID, NUME <i>sau</i> GEN</h3>
+
+  <label>Introduceti ID-ul filmului: </label>
+  <input type=number [(ngModel)]="film.id" name="idFilm">
+  <button (click)="getFilmByID()">CAUTATI dupa ID</button>
+
+  <div *ngIf="displayFilm === true">
+
+    <button (click)="closeDisplayFilm()" class="closeButton">Inchideti</button>
+
+    <p><strong>Nume film:</strong> {{film.nume}}</p>
+    <p><strong>Anul aparitiei:</strong> {{film.anulAparitiei}}</p>
+    <p><strong>Genul:</strong> {{film.gen}}</p>
+
+    <app-delete-films [film]="film"></app-delete-films>
+    <br>
+    <br>
+    <app-update-films [film]="film"></app-update-films>
+    <br>
+    <br>
+
+    <app-get-actors-for-film [film]="film"></app-get-actors-for-film>
+
+    <br>
+    <br>
+    <app-add-actor-for-film [film]="film"></app-add-actor-for-film>
+    <br>
+    <br>
+
+  </div>
+
+
+  <p><i>SAU</i></p>
+
+
+  <label>Introduceti NUMELE filmului: </label>
+  <input type="text" [(ngModel)]="numeFilm" name="numeFilm">
+
+  <br>
+  <br>
+
+  <label>Alegeti GENUL filmului: </label>
+  <select [(ngModel)]="idGen">
+    <option value=1>Actiune</option>
+    <option value=2>Comedie</option>
+    <option value=3>Crima</option>
+    <option value=4>Drama</option>
+    <option value=5>Horror</option>
+    <option value=6>Musical</option>
+    <option value=7>Romanta</option>
+    <option value=8>Sci-Fi</option>
+    <option value=9>Thriller</option>
+  </select>
+
+
+  <br>
+  <br>
+
+
+  <button (click)="getAllFilms()">Cautare avansata</button>
+  <br>
+  <br>
+  <div *ngIf="displayListOfAllFilms === true">
+
+    <button (click)="closeDisplayListOfAllFilms()" class="closeButton">Inchideti</button>
+
+
+    <table>
+      <tr>
+        <th>Nume film</th>
+        <th>Anul aparitie</th>
+        <th>Gen</th>
+      </tr>
+      <tr *ngFor="let film of listOfAllFilms">
+        <td>{{film.nume}}</td>
+        <td>{{film.anulAparitiei}}</td>
+        <td>{{film.gen}}</td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>
+
+
+<br>
+<br>
+
+
+<app-add-film></app-add-film>
+

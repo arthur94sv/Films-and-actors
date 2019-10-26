@@ -1,0 +1,24 @@
+<button (click)="getActorsForFilm()">Afisati TOTI actorii din film</button>
+<br>
+<br>
+
+<div *ngIf="displayListOfActorsForFilm === true">
+
+  <button (click)="closeDisplayListOfActorsForFilm()" class="closeButton">Inchideti lista de actori</button>
+
+    <table>
+      <tr>
+        <th>Actor ID</th>
+        <th>Prenume</th>
+        <th>Nume</th>
+
+      </tr>
+      <tr *ngFor="let actor of listOfActorsForFilm">
+        <td>{{actor.id}}</td>
+        <td>{{actor.prenume}}</td>
+        <td>{{actor.nume}}</td>
+      </tr>
+    </table>
+
+
+</div>

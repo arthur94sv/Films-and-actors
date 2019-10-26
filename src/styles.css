@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+table, th, td {
+  padding: 10px;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+button {
+  font-weight: bold;
+}
+
+.chenar{
+  border: 2px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.closeButton {
+  background-color: red;
+  color: white;
+  float: right;
+}

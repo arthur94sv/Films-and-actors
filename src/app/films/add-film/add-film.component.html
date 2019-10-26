@@ -1,0 +1,42 @@
+<div class="chenar">
+  <h3>ADAUGATI film</h3>
+
+  <form>
+
+
+    <label>Introduceti NUMELE filmului: </label>
+    <input type="text" [(ngModel)]="film.nume" name="numeFilmAdd">
+
+
+    <br>
+    <br>
+
+
+    <label>Introduceti ANUL APARITIEI: </label>
+    <input type="number" [(ngModel)]="film.anulAparitiei" name="anulAparitieiAdd">
+
+
+    <br>
+    <br>
+
+    <label>Alegeti GENUL filmului: </label>
+    <select [(ngModel)]="film.gen" name="genFilmAdd">
+      <option value=1>Actiune</option>
+      <option value=2>Comedie</option>
+      <option value=3>Crima</option>
+      <option value=4>Drama</option>
+      <option value=5>Horror</option>
+      <option value=6>Musical</option>
+      <option value=7>Romanta</option>
+      <option value=8>Sci-Fi</option>
+      <option value=9>Thriller</option>
+    </select>
+
+    <br>
+    <br>
+
+
+    <button (click)="addFilm()">ADAUGATI film</button>
+
+  </form>
+</div>

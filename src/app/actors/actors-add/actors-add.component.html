@@ -1,0 +1,17 @@
+<div class = chenar>
+  <h3>ADAUGATI actor</h3>
+
+  <form>
+    <label>Introduceti <strong>numele</strong> actorului: </label>
+    <input type=text [(ngModel)]="actor.nume" name="numeActor">
+    <br>
+    <br>
+
+    <label>Introduceti <strong>prenumele</strong> actorului: </label>
+    <input type=text [(ngModel)]="actor.prenume" name="prenumeActor">
+    <br>
+    <br>
+    <button (click)="addActor()">ADAUGATI actor</button>
+
+  </form>
+</div>

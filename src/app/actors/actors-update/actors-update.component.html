@@ -1,0 +1,22 @@
+<button (click)="displayUpdatePanel()">ACTUALIZARE actor</button>
+<br>
+<br>
+
+<div *ngIf="displayUpdate === true" class="chenar">
+
+  <h3>ACTUALIZATI informatii actor</h3>
+  <button class="closeButton" (click)="closeDisplayUpdatePanel()">INCHIDETI</button>
+
+  <form>
+    <label>Actualizati <strong>numele</strong> actorului: </label>
+    <input type=text [(ngModel)]="actor.nume" name="numeActor">
+    <br>
+    <br>
+
+    <label>Actualizati <strong>prenumele</strong> actorului: </label>
+    <input type=text [(ngModel)]="actor.prenume" name="prenumeActor">
+    <br>
+    <br>
+    <button (click)="updateActor()">ACTUALIZATI actor</button>
+  </form>
+</div>

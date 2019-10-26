@@ -1,0 +1,101 @@
+<div class="chenar">
+  <h3>CAUTATI actor; cautarea se poate face dupa ID <i>sau</i> dupa NUME</h3>
+
+
+  <label>Introduceti ID-ul actorului: </label>
+  <input type=number [(ngModel)]="actor.id">
+  <button (click)="getActorByID()">CAUTATI dupa ID</button>
+
+  <div *ngIf="displayActor === true">
+
+    <button (click)="closeActorDisplay()" class="closeButton">INCHIDETI</button>
+
+    <p><strong>Prenume:</strong> {{actor.prenume}}</p>
+    <p><strong>Nume:</strong> {{actor.nume}}</p>
+
+    <br>
+
+
+    <app-actors-delete [actor]="actor"></app-actors-delete>
+    <br>
+    <br>
+    <app-actors-update [actor]="actor"></app-actors-update>
+    <br>
+
+    <br>
+    <button (click)="getListOfFilmsForActor()">Afisati FILMELE actorului</button>
+
+
+    <br>
+    <br>
+
+
+    <div *ngIf="displayListOfFilmsForActor === true">
+
+      <button (click)="closeListOfFilmsForActor()" class="closeButton">INCHIDETI LISTA DE FILME</button>
+
+      <table>
+        <tr>
+          <th>Nume film</th>
+          <th>Anul aparitiei</th>
+          <th>Genul</th>
+
+        </tr>
+        <tr *ngFor="let film of listOfFilmsForAnActor">
+          <td>{{film.nume}}</td>
+          <td>{{film.anulAparitiei}}</td>
+          <td>{{film.genul}}</td>
+        </tr>
+      </table>
+      <br>
+      <br>
+
+    </div>
+    <app-add-film-for-actor [actor]="actor"></app-add-film-for-actor>
+  </div>
+  <br>
+
+
+  <p><i>SAU</i></p>
+
+
+  <label>Introduceti NUMELE actorului: </label>
+  <input type="text" [(ngModel)]="numeActor">
+  <strong> ATENTIE! </strong> <em>daca nu introduceti nici un nume, rezultatul cautarii va afisa un tabel cu toti
+  actorii din baza de date</em>
+  <br>
+  <br>
+  <button (click)="getAllActors()">CAUTARE Avansata</button>
+
+  <br>
+  <br>
+
+
+  <div *ngIf="displayListOfActors === true">
+
+    <button (click)="closeTableOfAllActors()" class="closeButton">INCHIDETI</button>
+
+    <table>
+      <tr>
+        <th>Actor ID</th>
+        <th>Prenume</th>
+        <th>Nume</th>
+
+      </tr>
+      <tr *ngFor="let actor of listOfActors">
+        <td>{{actor.id}}</td>
+        <td>{{actor.prenume}}</td>
+        <td>{{actor.nume}}</td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>
+
+
+<br>
+<br>
+
+
+<app-actors-add></app-actors-add>
