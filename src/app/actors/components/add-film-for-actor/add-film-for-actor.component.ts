@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {Actor} from '../../model/Actor';
-import {Film} from '../../model/Film';
+import {Film} from '../../../films/model/Film';
 import {ActorService} from '../../service/actor.service';
 
 
